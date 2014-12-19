@@ -1,11 +1,11 @@
 <features xmlns="http://karaf.apache.org/xmlns/features/v1.0.0">
 
-  <feature name="morphia" version="0.108" resolver="(obr)">
-    <feature version="[1.9.13,2)">jackson</feature>
+  <feature name="morphia-support" version="0.108" resolver="(obr)">
 
     <bundle dependency="true">mvn:org.mongodb/mongo-java-driver/2.12.2</bundle>
     <bundle>wrap:mvn:com.thoughtworks.proxytoys/proxytoys/1.0</bundle>
     <bundle>mvn:org.mongodb.morphia/morphia/0.108</bundle>
+    <bundle>mvn:us.literat.mongodb/MorphiaSupport/1.0</bundle>
   </feature>
 
 </features>
