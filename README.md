@@ -48,9 +48,14 @@ Using in your blueprint/spring xml:
         </property>
       </bean>
 
-      <bean id="linksDb" factory-ref="datastoreFactory" factory-method="get"/>
+      <bean id="theEntityDb" factory-ref="datastoreFactory" factory-method="get"/>
       <bean id="datastoreFactory" class="us.literat.mongodb.morphia.DatastoreFactory">
         <property name="mongoClient" ref="mongoClient"/>
         <property name="morphia" ref="morphia"/>
         <property name="database" value="${db.mongo.database}"/>
+      </bean>
+
+      <!-- set theEntityDb as a property on the bean you need db access from -->
+      <bean ...>
+        <property name="entityDb" ref="theEntityDb"/>
       </bean>
